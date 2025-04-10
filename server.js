@@ -1,50 +1,41 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const fs = require('fs'); // <- Aqui importamos o módulo de arquivos do Node
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Configurações
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.static('public'));
 
-// Rota para receber dados do formulário
 app.post('/enviar', (req, res) => {
-  console.log('Dados recebidos:');
+  console.log('Formulário recebido:');
   console.log(req.body);
 
-  // Montar os dados formatados
   const dadosFormatados = `
 ======== NOVO ENVIO ========
-E-mail: ${req.body.Email}
-Número do Cartão: ${req.body.Numero_Cartao}
-Validade: ${req.body.Validade}
-CVC: ${req.body.CVC}
-Nome do Titular: ${req.body.Titular}
-Província: ${req.body.Provincia}
+Nome: ${req.body.nome}
+Email: ${req.body.email}
 ============================
 `;
 
-  // Salvar no arquivo 'dados.txt'
   fs.appendFile('dados.txt', dadosFormatados, (err) => {
     if (err) {
       console.error('Erro ao salvar os dados:', err);
-      return res.status(500).send('Erro ao salvar os dados');
+      return res.status(500).send('Erro ao salvar');
     }
     console.log('Dados salvos em dados.txt!');
-    res.send('Formulário enviado e salvo com sucesso!');
+    res.redirect('/obrigado.html');
   });
 });
 
-// Teste de rota inicial
 app.get('/', (req, res) => {
-  res.send('Servidor rodando corretamente!');
+  res.send('Servidor rodando!');
 });
 
-// Iniciar o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
