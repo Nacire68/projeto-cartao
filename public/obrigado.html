@@ -2,10 +2,63 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obrigado!</title>
+  <style>
+    body {
+      background-color: #FFA500; /* Laranja */
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #FFA500;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #fff0d6;
+      color: #ff7b00;
+    }
+  </style>
 </head>
 <body>
-  <h1>Obrigado!</h1>
-  <p>Seu formulário foi enviado com sucesso!</p>
+  <div class="container">
+    <h1>Obrigado!</h1>
+    <p>Seu formulário foi enviado com sucesso.</p>
+    <a class="btn" href="/">Voltar para o início</a>
+  </div>
 </body>
 </html>
