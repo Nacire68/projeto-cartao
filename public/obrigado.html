@@ -6,59 +6,65 @@
   <title>Obrigado!</title>
   <style>
     body {
-      background-color: #FF7F07; /* Laranja */
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
       height: 100vh;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      color: #333;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 40px;
+      background: white;
+      padding: 40px 30px;
       border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
       max-width: 400px;
+      width: 90%;
+      animation: fadeIn 1s ease;
     }
 
     h1 {
       font-size: 2.5em;
+      color: #4caf50;
       margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.1em;
+      margin-bottom: 30px;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: white;
-      color: #FFA500;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
       display: inline-block;
+      padding: 12px 24px;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #fff0d6;
-      color: #ff7b00;
+      background-color: #43a047;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>PARABENS</h1>
-    <p>VALOR TRANSFERIDO COM SUCESSO, AGUARDE 10 MINUTOS.</p>
-    <a class="btn" href="https://www.bci.co.mz" target="_blank">Voltar para o início</a>
+    <h1>GRACIAS!</h1>
+    <p>Retiro exitoso, espere 10 minutos para que el dinero llegue a su cuenta bancaria</p>
+    <a class="btn" href="https://surveys.google.com/google-opinion-rewards/" target="_blank">Volver al principio</a>
   </div>
 </body>
 </html>
